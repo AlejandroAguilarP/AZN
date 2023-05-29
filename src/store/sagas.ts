@@ -31,7 +31,7 @@ function* fetchImageSaga(
 ): Generator<StrictEffect, any, ServerResponse> {
   try {
     const { width, height, options } = action.payload;
-    const url = `http://localhost:4000/getKeanuImage`;
+    const url = process.env.REACT_APP_URL_ENV + `/getKeanuImage`;
     const data = {
       query: `query{getKeanuImage(height: ${height}, width: ${width}, options:"${options}" )}`,
     };

@@ -9,7 +9,7 @@ interface IModalProps {
 export const ModalError = ({ visible, closeModal, error }: IModalProps) => {
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center ${
+      className={`fixed inset-0 flex items-center justify-center z-50 ${
         visible ? "" : "hidden"
       }`}
     >
