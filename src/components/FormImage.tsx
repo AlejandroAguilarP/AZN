@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchImageFailure, fetchImageRequest } from "../store/actions";
 
@@ -12,7 +12,7 @@ export const FormImage = () => {
     dispatch(fetchImageRequest(width, height, options));
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateValues()) {
